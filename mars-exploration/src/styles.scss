@@ -2,9 +2,14 @@
 
 html, body { height: 100%; }
 body {
-    margin: 0; 
+    margin: 15px; 
     font-family: Roboto, "Helvetica Neue", sans-serif;
     background-color: black;
     color: white;
+    background-image: url("assets/img/pexels-francesco-ungaro-998641.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
  }
 
