@@ -1,0 +1,33 @@
+@keyframes move-astronaut {
+    100% {
+        transform: translate(-160px, -160px);
+    }
+}
+
+@keyframes rotate-astronaut {
+    100% {
+        transform: rotate(-720deg);
+    }
+}
+
+.central-body {
+    padding: 17% 5% 10% 5%;
+    text-align: center;
+    color: white;
+}
+
+.box_astronaut {
+    z-index: 1;
+    position: absolute;
+    top: 60%;
+    right: 20%;
+    animation: move-astronaut 50s infinite linear both alternate;
+}
+
+.object_astronaut {
+    animation: rotate-astronaut 200s infinite linear both alternate;
+    pointer-events: none;
+}
+.title_bold {
+    text-transform: uppercase;
+}

@@ -1,0 +1,39 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="settingsForm" class="form">
+  <mat-form-field>
+    <mat-label>Rover</mat-label>
+    <mat-select required formControlName="rover">
+      <mat-option *ngFor="let rover of rovers" [value]="rover.value">
+        {{ rover.viewValue }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="settingsForm.get('rover')?.hasError('required')">
+      Rover is <strong> required.</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Camera</mat-label>
+    <mat-select formControlName="camera">
+      <mat-option>--</mat-option>
+      <mat-option *ngFor="let camera of cameras" [value]="camera.value">
+        {{ camera.viewValue }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Sol</mat-label>
+    <input required formControlName="sol" matInput type="number" min="0" />
+    <mat-error *ngIf="settingsForm.get('sol')?.hasError('required')">
+      Sol is <strong> required.</strong>
+    </mat-error>
+  </mat-form-field>
+  <div class="form-field">
+    <button type="submit" mat-stroked-button [disabled]="!settingsForm.valid">Explore</button>
+  </div>
+</form>
+<app-gallery
+  (loadMore)="loadMore()"
+  [noMoreItems]="noMoreItems"
+  [photos]="photosSrc"
+  *ngIf="photosSrc.length"
+></app-gallery>
+<app-no-results *ngIf="noPhotosExist"></app-no-results>

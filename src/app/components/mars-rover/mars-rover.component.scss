@@ -1,0 +1,36 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    mat-form-field,
+    .form-field {
+        width: 100%;
+    }
+
+    .form-field {
+        display: flex;
+        justify-content: center;
+    }
+
+    @media screen and (min-width: 641px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        mat-form-field,
+        .form-field {
+            width: calc(50% - 20px);
+        }
+    }
+
+    @media screen and (min-width: 961px) {
+        mat-form-field{
+            width: calc(25% - 20px);
+            max-width: 300px;
+        }
+        .form-field {
+            width: 80px;
+        }
+    }
+}

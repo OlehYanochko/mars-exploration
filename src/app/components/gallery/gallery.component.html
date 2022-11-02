@@ -1,0 +1,10 @@
+<div class="grid-gallery">
+    <div class="grid-gallery__item" href="#" *ngFor="let photo of photos">
+        <img class="grid-gallery__image" [src]="photo" />
+    </div>
+</div>
+<div class="button-container">
+    <button *ngIf="!noMoreItems" mat-raised-button (click)="loadMore.emit()">
+        Load More...
+    </button>
+</div>
